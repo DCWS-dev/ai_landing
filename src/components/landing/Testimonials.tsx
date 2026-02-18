@@ -1,38 +1,40 @@
 import { SectionWrapper } from '../shared/SectionWrapper';
 import { useContent } from '../../context/ContentContext';
+import { useTranslation } from 'react-i18next';
 
 export function Testimonials() {
   const { content } = useContent();
+  const { t } = useTranslation();
   const { testimonials } = content;
 
   return (
-    <SectionWrapper id='testimonials' className='bg-surface-light relative overflow-hidden'>
+    <SectionWrapper id='testimonials' className='bg-surface relative overflow-hidden'>
       <div className='max-w-4xl mx-auto relative z-10'>
-        <h2 className='text-3xl md:text-5xl font-bold text-center mb-16'>
+        <h2 className='text-3xl md:text-5xl font-semibold text-left md:text-center mb-16'>
           {testimonials.title}
         </h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div className='space-y-4'>
-             <div className='p-6 rounded-2xl bg-surface border border-white/5'>
-               <h3 className='text-xl font-bold text-accent mb-2'>Система</h3>
-               <p className='text-text-secondary'>Понимание системы и первые автоматизации</p>
+             <div className='p-6 rounded-2xl bg-surface-light border border-contrast/5'>
+               <h3 className='text-xl font-bold text-primary mb-2'>{t('ui.testimonialsSystem')}</h3>
+               <p className='text-text-secondary'>{t('ui.testimonialsSystemDesc')}</p>
              </div>
-             <div className='p-6 rounded-2xl bg-surface border border-white/5'>
-               <h3 className='text-xl font-bold text-neon-blue'>Инфраструктура</h3>
-               <p className='text-text-secondary'>Базовая AI-инфраструктура и черновик лендинга</p>
+             <div className='p-6 rounded-2xl bg-surface-light border border-contrast/5'>
+               <h3 className='text-xl font-bold text-primary'>{t('ui.testimonialsInfra')}</h3>
+               <p className='text-text-secondary'>{t('ui.testimonialsInfraDesc')}</p>
              </div>
           </div>
           
           <div className='space-y-4 md:mt-12'>
-             <div className='p-6 rounded-2xl bg-surface border border-white/5'>
-               <h3 className='text-xl font-bold text-neon-green'>Контент и продажи</h3>
-               <p className='text-text-secondary'>Контент на месяц, бот и аналитика</p>
+             <div className='p-6 rounded-2xl bg-surface-light border border-contrast/5'>
+               <h3 className='text-xl font-bold text-green-500'>{t('ui.testimonialsContent')}</h3>
+               <p className='text-text-secondary'>{t('ui.testimonialsContentDesc')}</p>
              </div>
              
-             <div className='p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 border border-primary/30 text-center'>
-               <p className='text-2xl font-black text-white italic'>
-                 «Это не теория.<br/>Это фундамент.»
+             <div className='p-8 rounded-2xl bg-primary/5 border border-primary/15 text-left md:text-center'>
+               <p className='text-2xl font-black text-text-primary italic whitespace-pre-line'>
+                 {t('ui.testimonialsQuote')}
                </p>
              </div>
           </div>

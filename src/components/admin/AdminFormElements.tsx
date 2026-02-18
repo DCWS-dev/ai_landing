@@ -9,7 +9,7 @@ export function AdminInput({ label, className = '', ...props }: AdminInputProps)
     <div>
       <label className="block text-sm text-text-secondary mb-1">{label}</label>
       <input
-        className={`w-full px-4 py-2.5 rounded-lg bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors text-sm ${className}`}
+        className={`w-full px-4 py-2.5 rounded-lg bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors text-sm ${className}`}
         {...props}
       />
     </div>
@@ -25,7 +25,7 @@ export function AdminTextarea({ label, className = '', ...props }: AdminTextarea
     <div>
       <label className="block text-sm text-text-secondary mb-1">{label}</label>
       <textarea
-        className={`w-full px-4 py-2.5 rounded-lg bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors text-sm min-h-[100px] resize-y ${className}`}
+        className={`w-full px-4 py-2.5 rounded-lg bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors text-sm min-h-[100px] resize-y ${className}`}
         {...props}
       />
     </div>
@@ -58,7 +58,7 @@ export function AdminListEditor({ label, items, onChange }: AdminListEditorProps
             <input
               value={item}
               onChange={(e) => updateItem(i, e.target.value)}
-              className="flex-1 px-3 py-2 rounded-lg bg-surface border border-white/10 text-white text-sm focus:border-primary focus:outline-none transition-colors"
+              className="flex-1 px-3 py-2 rounded-lg bg-surface border border-contrast/10 text-text-primary text-sm focus:border-primary focus:outline-none transition-colors"
             />
             <button
               onClick={() => removeItem(i)}
@@ -71,7 +71,7 @@ export function AdminListEditor({ label, items, onChange }: AdminListEditorProps
       </div>
       <button
         onClick={addItem}
-        className="mt-2 px-4 py-2 rounded-lg border border-dashed border-white/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer"
+        className="mt-2 px-4 py-2 rounded-lg border border-dashed border-contrast/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer"
       >
         + Добавить
       </button>
@@ -100,14 +100,14 @@ interface AdminSaveButtonProps {
 
 export function AdminSaveButton({ onClick, saved }: AdminSaveButtonProps) {
   return (
-    <div className="flex items-center gap-3 mt-6 pt-6 border-t border-white/5">
+    <div className="flex items-center gap-3 mt-6 pt-6 border-t border-contrast/5">
       <button
         onClick={onClick}
-        className="px-6 py-2.5 rounded-lg bg-accent text-surface font-bold text-sm hover:bg-accent-light transition-colors cursor-pointer"
+        className="px-6 py-2.5 rounded-full bg-accent text-accent-text font-bold text-sm hover:opacity-90 transition-colors cursor-pointer"
       >
         Сохранить изменения
       </button>
-      {saved && <span className="text-sm text-neon-green">✓ Сохранено</span>}
+      {saved && <span className="text-sm text-green-500">✓ Сохранено</span>}
     </div>
   );
 }

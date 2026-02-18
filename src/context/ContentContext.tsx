@@ -64,12 +64,24 @@ export function ContentProvider({ children }: { children: ReactNode }) {
      setContent(prev => {
         const newContent = { ...prev, [section]: data };
         
-        // Сохраняем в localStorage
+        // Сохраняем в localStorage для текущего языка
         const storageKey = `site_content_${lang}`;
         localStorage.setItem(storageKey, JSON.stringify(newContent));
         
-        // Обновляем i18n
+        // Обновляем i18n для текущего языка
         i18n.addResourceBundle(lang, 'translation', { [section]: data }, true, true);
+        
+        // Синхронизация: сохраняем в другой язык тоже
+        const otherLang = lang === 'ru' ? 'uk' : 'ru';
+        const otherStorageKey = `site_content_${otherLang}`;
+        const otherStored = localStorage.getItem(otherStorageKey);
+        let otherContent: Record<string, unknown> = {};
+        if (otherStored) {
+          try { otherContent = JSON.parse(otherStored); } catch { /* ignore */ }
+        }
+        otherContent[section] = data;
+        localStorage.setItem(otherStorageKey, JSON.stringify(otherContent));
+        i18n.addResourceBundle(otherLang, 'translation', { [section]: data }, true, true);
         
         return newContent;
      });

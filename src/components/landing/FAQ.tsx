@@ -12,7 +12,7 @@ export function FAQ() {
 
   return (
     <SectionWrapper id="faq">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12">
         {faq.title}
       </h2>
 
@@ -20,10 +20,10 @@ export function FAQ() {
         {faq.items.map((item, i) => {
           const isOpen = openIndex === i;
           return (
-            <div key={i} className="card-glass rounded-xl overflow-hidden">
+            <div key={i} className="card-clean rounded-xl overflow-hidden">
               <button
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors cursor-pointer"
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-contrast/5 transition-colors cursor-pointer"
               >
                 <p className="font-semibold pr-4">{item.question}</p>
                 <ChevronDown
@@ -32,19 +32,19 @@ export function FAQ() {
                 />
               </button>
               {isOpen && (
-                <div className="px-5 pb-5 border-t border-white/5 pt-4">
+                <div className="px-5 pb-5 border-t border-contrast/5 pt-4">
                   {i === faq.items.length - 1 && (item.answer.includes('Политика') || item.answer.includes('Політика')) ? (
                     <p className="text-text-secondary text-sm leading-relaxed">
                       <a 
                         href={content.footer.privacyUrl}
-                        className="text-accent hover:underline"
+                        className="text-primary hover:underline"
                       >
                         {t('privacyPolicy.title')}
                       </a>
                       <span className="text-text-secondary">, </span>
                       <a 
                         href={content.footer.termsUrl}
-                        className="text-accent hover:underline"
+                        className="text-primary hover:underline"
                       >
                         {t('termsOfService.title')}
                       </a>

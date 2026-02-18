@@ -38,9 +38,9 @@ export function AudienceEditor() {
         <AdminInput label="Заголовок" value={data.title} onChange={(e) => setData({ ...data, title: e.target.value })} />
 
         {data.cards.map((card, i) => (
-          <div key={i} className="card-glass rounded-xl p-4 space-y-3">
+          <div key={i} className="card-clean rounded-xl p-4 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-accent">Карточка {i + 1}</span>
+              <span className="text-sm font-semibold text-primary">Карточка {i + 1}</span>
               <button onClick={() => removeCard(i)} className="text-xs text-red-400 hover:text-red-300 cursor-pointer">Удалить</button>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -52,7 +52,7 @@ export function AudienceEditor() {
           </div>
         ))}
 
-        <button onClick={addCard} className="px-4 py-2 rounded-lg border border-dashed border-white/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
+        <button onClick={addCard} className="px-4 py-2 rounded-lg border border-dashed border-contrast/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
           + Добавить карточку
         </button>
       </div>

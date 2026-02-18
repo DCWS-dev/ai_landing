@@ -25,10 +25,10 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative card-glass rounded-2xl p-6 md:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-surface rounded-2xl border border-contrast/10 p-6 md:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-soft-lg">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-text-secondary hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-text-secondary hover:text-text-primary transition-colors"
         >
           <X size={24} />
         </button>

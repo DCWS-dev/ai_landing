@@ -40,13 +40,13 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     <div className="min-h-screen bg-surface flex">
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-surface-light border-r border-white/5 transform transition-transform duration-300 ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-surface-light border-r border-contrast/5 transform transition-transform duration-300 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0 lg:static lg:shrink-0`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-white/5">
+        <div className="flex items-center justify-between p-4 border-b border-contrast/5">
           <div className="flex items-center gap-2">
-            <LayoutDashboard size={20} className="text-accent" />
+            <LayoutDashboard size={20} className="text-primary" />
             <span className="font-bold">Админ-панель</span>
           </div>
           <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-text-muted cursor-pointer">
@@ -67,8 +67,8 @@ export function AdminLayout({ children }: AdminLayoutProps) {
                 }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors cursor-pointer ${
                   isActive
-                    ? 'bg-primary/20 text-accent border border-primary/30'
-                    : 'text-text-secondary hover:bg-white/5 hover:text-white'
+                    ? 'bg-primary/10 text-primary border border-primary/20'
+                    : 'text-text-secondary hover:bg-contrast/5 hover:text-text-primary'
                 }`}
               >
                 <Icon size={16} />
@@ -78,10 +78,10 @@ export function AdminLayout({ children }: AdminLayoutProps) {
           })}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/5 space-y-2">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-contrast/5 space-y-2">
           <Link
             to="/"
-            className="flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors"
           >
             <ArrowLeft size={16} />
             Вернуться на сайт
@@ -103,7 +103,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
       {/* Main */}
       <div className="flex-1 min-w-0">
-        <header className="sticky top-0 z-30 bg-surface/90 backdrop-blur-md border-b border-white/5 px-4 md:px-6 h-14 flex items-center gap-4">
+        <header className="sticky top-0 z-30 bg-surface/90 backdrop-blur-md border-b border-contrast/5 px-4 md:px-6 h-14 flex items-center gap-4">
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-text-muted cursor-pointer">
             <Menu size={20} />
           </button>

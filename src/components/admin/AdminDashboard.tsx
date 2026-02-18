@@ -42,7 +42,7 @@ export function AdminDashboard({ onReset }: AdminDashboardProps) {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/20 border border-primary/30 text-sm text-primary-light hover:bg-primary/30 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary hover:bg-primary/20 transition-colors"
         >
           <Eye size={16} />
           Открыть лендинг
@@ -53,7 +53,7 @@ export function AdminDashboard({ onReset }: AdminDashboardProps) {
               onReset();
             }
           }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-500/20 border border-red-500/30 text-sm text-red-400 hover:bg-red-500/30 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 text-sm text-red-500 hover:bg-red-100 transition-colors cursor-pointer dark:bg-red-500/20 dark:border-red-500/30 dark:text-red-400"
         >
           <RotateCcw size={16} />
           Сбросить контент
@@ -67,7 +67,7 @@ export function AdminDashboard({ onReset }: AdminDashboardProps) {
             <button
               key={section.id}
               onClick={() => navigate(`/admin/${section.id}`)}
-              className="card-glass rounded-xl p-4 text-left hover:border-primary/30 transition-all group cursor-pointer"
+              className="card-clean rounded-xl p-4 text-left hover:border-primary/30 transition-all group cursor-pointer"
             >
               <Icon size={24} className={`${section.color} mb-2 group-hover:scale-110 transition-transform`} />
               <p className="text-sm font-semibold">{section.label}</p>

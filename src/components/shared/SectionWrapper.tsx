@@ -19,7 +19,7 @@ export function SectionWrapper({ id, children, className = '' }: SectionWrapperP
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`py-16 md:py-24 px-4 md:px-8 ${className}`}
+      className={`py-16 md:py-24 px-2 sm:px-4 md:px-8 ${className}`}
     >
       <div className="max-w-6xl mx-auto">
         {children}

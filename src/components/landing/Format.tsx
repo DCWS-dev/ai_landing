@@ -1,36 +1,37 @@
 import { SectionWrapper } from '../shared/SectionWrapper';
-import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { Button } from '../shared/Button';
 
 export function Format() {
+  const { t } = useTranslation();
+
   return (
-    <SectionWrapper id='format' className='bg-surface relative overflow-hidden'>
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]' />
-      
-      <div className='max-w-4xl mx-auto text-center relative z-10'>
-        <h2 className='text-3xl md:text-5xl font-bold mb-16 leading-tight'>
-          Перестрой свой бизнес в доходный конвейер
+    <SectionWrapper id='format' className='bg-surface-light relative overflow-hidden'>
+      <div className='max-w-4xl mx-auto relative z-10'>
+        <h2 className='text-3xl md:text-5xl font-semibold text-left md:text-center mb-16 leading-tight zigzag-lines'>
+          <span>{t('ui.formatTitle1')}</span>
           <br />
-          <span className='text-text-secondary'>или уступи тем, кто это уже сделал!</span>
+          <span className='text-text-secondary'>{t('ui.formatTitle2')}</span>
         </h2>
 
-        <div className='flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16'>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className='w-full md:w-auto px-12 py-6 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-surface text-xl font-bold shadow-glow hover:shadow-glow-lg transition-all'
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8'>
+          <Button
+            variant='green'
+            size='lg'
+            className='w-full sm:w-auto px-12 py-5 text-xl uppercase tracking-wide'
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Заработать
-          </motion.button>
+            {t('ui.formatEarn')}
+          </Button>
 
-          <div className='text-2xl font-black text-white/20'>ИЛИ</div>
-
-          <button
-            disabled
-            className='w-full md:w-auto px-12 py-6 rounded-2xl bg-white/5 text-text-muted text-xl font-medium border border-white/5 cursor-not-allowed contrast-50 grayscale'
+          <Button
+            variant='outline'
+            size='lg'
+            className='w-full sm:w-auto px-12 py-5 text-xl uppercase tracking-wide opacity-50'
+            onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Уступить
-          </button>
+            {t('ui.formatLose')}
+          </Button>
         </div>
       </div>
     </SectionWrapper>

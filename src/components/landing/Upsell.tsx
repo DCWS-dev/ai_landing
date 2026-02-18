@@ -1,7 +1,7 @@
-import { Rocket } from 'lucide-react';
 import { useContent } from '../../context/ContentContext';
 import { useTranslation } from 'react-i18next';
 import { SectionWrapper } from '../shared/SectionWrapper';
+import { FileText, Shield } from 'lucide-react';
 
 export function Upsell() {
   const { content } = useContent();
@@ -9,37 +9,28 @@ export function Upsell() {
   const { upsell } = content;
 
   return (
-    <SectionWrapper id="upsell" className="gradient-bg">
+    <SectionWrapper id="upsell" className="bg-surface-light">
       <div className="max-w-3xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/20 mb-6">
-          <Rocket size={32} className="text-accent" />
-        </div>
-
-        <h2 className="text-2xl md:text-4xl font-bold mb-6">
+        <h2 className="text-2xl md:text-4xl font-semibold mb-4">
           {upsell.title}
         </h2>
+        <p className="text-text-secondary mb-8">{upsell.description}</p>
 
-        <p className="text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
-          {upsell.description}
-        </p>
-
-        <div className="card-glass rounded-2xl p-6 md:p-8 border-accent/20 border inline-block">
-          <div className="text-lg font-semibold text-accent flex flex-wrap justify-center items-center gap-2">
-            <span className="mr-1">🔥</span>
-            <a 
-              href={content.footer.privacyUrl}
-              className="hover:underline cursor-pointer"
-            >
-              {t('privacyPolicy.title')}
-            </a>
-            <span className="text-accent/50">|</span>
-            <a 
-              href={content.footer.termsUrl}
-              className="hover:underline cursor-pointer"
-            >
-              {t('termsOfService.title')}
-            </a>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={content.footer.privacyUrl}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-contrast/15 text-text-primary hover:border-primary hover:text-primary transition-all text-sm font-semibold"
+          >
+            <Shield size={16} />
+            {t('privacyPolicy.title')}
+          </a>
+          <a
+            href={content.footer.termsUrl}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-contrast/15 text-text-primary hover:border-primary hover:text-primary transition-all text-sm font-semibold"
+          >
+            <FileText size={16} />
+            {t('termsOfService.title')}
+          </a>
         </div>
       </div>
     </SectionWrapper>

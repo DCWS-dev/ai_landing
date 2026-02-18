@@ -14,9 +14,10 @@ interface LeadFormData {
 interface LeadFormProps {
   onSuccess?: () => void;
   currency?: 'RUB' | 'UAH';
+  prefill?: { name?: string; phone?: string };
 }
 
-export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
+export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { t } = useTranslation();
@@ -25,7 +26,12 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LeadFormData>();
+  } = useForm<LeadFormData>({
+    defaultValues: {
+      name: prefill?.name || '',
+      phone: prefill?.phone || '',
+    },
+  });
 
   const isUAH = currency === 'UAH';
   const phonePlaceholder = isUAH ? '+380 (XX) XXX-XX-XX' : '+7 (900) 123-45-67';
@@ -42,7 +48,7 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || 'Ошибка создания платежа');
+        throw new Error(err.error || t('ui.errorPayment'));
       }
 
       const responseData = await res.json();
@@ -83,7 +89,7 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
       }
 
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Произошла ошибка');
+      setError(err instanceof Error ? err.message : t('ui.errorGeneral'));
     } finally {
       if (typeof window !== 'undefined' && !document.querySelector('form[action*="wayforpay"]')) {
           setLoading(false);
@@ -94,16 +100,16 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <p className="text-text-secondary text-sm mb-4">
-        Заполните форму для записи на марафон. После оплаты вы получите доступ ко всем материалам.
+        {t('ui.formIntro')}
       </p>
 
       <div>
-        <label className="block text-sm text-text-secondary mb-1">Ваше имя</label>
+        <label className="block text-sm text-text-secondary mb-1">{t('ui.formName')}</label>
         <input
-          {...register('name', { required: 'Введите имя' })}
+          {...register('name', { required: t('ui.validName') })}
           type="text"
-          placeholder="Александр"
-          className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
+          placeholder={t('ui.placeholderName')}
+          className="w-full px-5 py-3.5 rounded-full bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
         />
         {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
       </div>
@@ -112,48 +118,46 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
         <label className="block text-sm text-text-secondary mb-1">Email</label>
         <input
           {...register('email', {
-            required: 'Введите email',
-            pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Некорректный email' },
+            required: t('ui.validEmail'),
+            pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: t('ui.validEmailBad') },
           })}
           type="email"
           placeholder="you@email.com"
-          className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
+          className="w-full px-5 py-3.5 rounded-full bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
         />
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
       </div>
 
       <div>
         <label className="block text-sm text-text-secondary mb-1">
-          {isUAH ? 'Телефон (UA)' : 'Телефон (RU)'}
+          {isUAH ? t('ui.formPhoneUA') : t('ui.formPhoneRU')}
         </label>
         <input
           {...register('phone', {
-            required: 'Введите телефон',
+            required: t('ui.validPhone'),
             validate: (value) => {
                const digits = value.replace(/\D/g, '');
                if (isUAH) {
-                 // UA: 380XXXXXXXXX (12 digits) or 0XXXXXXXXX (10 digits)
-                 return (digits.length === 12 && digits.startsWith('380')) || (digits.length === 10 && digits.startsWith('0')) || 'Введите корректный номер (напр. +380... або 0...)';
+                 return (digits.length === 12 && digits.startsWith('380')) || (digits.length === 10 && digits.startsWith('0')) || t('ui.validPhoneUA');
                } else {
-                 // RU: 79XXXXXXXXX (11 digits) or 89XXXXXXXXX (11 digits)
-                 return (digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'))) || 'Введите корректный номер (напр. +7...)';
+                 return (digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'))) || t('ui.validPhoneRU');
                }
             }
           })}
           type="tel"
           placeholder={phonePlaceholder}
-          className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
+          className="w-full px-5 py-3.5 rounded-full bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
         />
         {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm text-text-secondary mb-1">Telegram username</label>
+        <label className="block text-sm text-text-secondary mb-1">{t('ui.formTelegram')}</label>
         <input
           {...register('telegram')}
           type="text"
           placeholder="@username"
-          className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
+          className="w-full px-5 py-3.5 rounded-full bg-surface border border-contrast/10 text-text-primary placeholder-text-muted focus:border-primary focus:outline-none transition-colors"
         />
       </div>
 
@@ -168,16 +172,16 @@ export function LeadForm({ onSuccess, currency = 'RUB' }: LeadFormProps) {
         {loading ? (
           <>
             <Loader2 size={20} className="animate-spin" />
-            Перенаправление на оплату...
+            {t('ui.formRedirecting')}
           </>
         ) : (
-          'Оплатить 1 990 ₽'
+          currency === 'UAH' ? t('ui.formSubmitUAH') : t('ui.formSubmitRUB')
         )}
       </Button>
 
       <p className="text-xs text-text-muted text-center">
-        Нажимая кнопку, вы соглашаетесь с{' '}{t('privacyPolicy.title').toLowerCase()}
-        <a href="/privacy" className="underline hover:text-text-secondary">политикой конфиденциальности</a>
+        {t('ui.formConsent')}{' '}
+        <a href="/privacy" className="underline hover:text-text-secondary">{t('ui.formConsentLink')}</a>
       </p>
     </form>
   );

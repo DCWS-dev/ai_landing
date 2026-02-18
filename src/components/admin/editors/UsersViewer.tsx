@@ -66,7 +66,7 @@ export function UsersViewer() {
     return (
       <div className="text-center py-20">
         <p className="text-red-400 mb-4">{error}</p>
-        <button onClick={fetchUsers} className="text-accent hover:underline cursor-pointer">
+        <button onClick={fetchUsers} className="text-primary hover:underline cursor-pointer">
           Попробовать снова
         </button>
       </div>
@@ -84,7 +84,7 @@ export function UsersViewer() {
         </div>
         <button
           onClick={fetchUsers}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-text-secondary hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-contrast/5 border border-contrast/10 text-sm text-text-secondary hover:text-text-primary hover:bg-contrast/10 transition-colors cursor-pointer"
         >
           <RefreshCw size={14} />
           Обновить
@@ -92,7 +92,7 @@ export function UsersViewer() {
       </div>
 
       {!data?.users.length ? (
-        <div className="card-glass rounded-xl p-12 text-center text-text-muted">
+        <div className="card-clean rounded-xl p-12 text-center text-text-muted">
           Пока нет зарегистрированных пользователей
         </div>
       ) : (
@@ -103,7 +103,7 @@ export function UsersViewer() {
             return (
               <div
                 key={user.orderId}
-                className="card-glass rounded-xl p-4 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-center"
+                className="card-clean rounded-xl p-4 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-center"
               >
                 <div className="min-w-0">
                   <div className="flex items-center gap-3 mb-2">

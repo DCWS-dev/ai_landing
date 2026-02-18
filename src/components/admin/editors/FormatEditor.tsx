@@ -42,19 +42,19 @@ export function FormatEditor() {
               <input
                 value={item.day}
                 onChange={(e) => updateTimeline(i, 'day', e.target.value)}
-                className="w-24 px-3 py-2 rounded-lg bg-surface border border-white/10 text-white text-sm focus:border-primary focus:outline-none"
+                className="w-24 px-3 py-2 rounded-lg bg-surface border border-contrast/10 text-text-primary text-sm focus:border-primary focus:outline-none"
                 placeholder="День N"
               />
               <input
                 value={item.description}
                 onChange={(e) => updateTimeline(i, 'description', e.target.value)}
-                className="flex-1 px-3 py-2 rounded-lg bg-surface border border-white/10 text-white text-sm focus:border-primary focus:outline-none"
+                className="flex-1 px-3 py-2 rounded-lg bg-surface border border-contrast/10 text-text-primary text-sm focus:border-primary focus:outline-none"
                 placeholder="Описание"
               />
               <button onClick={() => removeTimeline(i)} className="px-3 py-2 rounded-lg bg-red-500/20 text-red-400 text-sm cursor-pointer">✕</button>
             </div>
           ))}
-          <button onClick={addTimeline} className="px-4 py-2 rounded-lg border border-dashed border-white/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
+          <button onClick={addTimeline} className="px-4 py-2 rounded-lg border border-dashed border-contrast/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
             + Добавить день
           </button>
         </div>

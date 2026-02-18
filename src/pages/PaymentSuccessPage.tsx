@@ -11,9 +11,9 @@ export function PaymentSuccessPage() {
 
   return (
     <div className="min-h-screen bg-surface flex items-center justify-center px-4">
-      <div className="card-glass rounded-2xl p-8 max-w-md w-full text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 mb-6">
-          <CheckCircle size={36} className="text-green-400" />
+      <div className="card-clean rounded-2xl p-8 max-w-md w-full text-center shadow-soft-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-50 mb-6">
+          <CheckCircle size={36} className="text-green-500" />
         </div>
 
         <h1 className="text-2xl font-bold mb-2">Оплата прошла успешно!</h1>
@@ -25,7 +25,7 @@ export function PaymentSuccessPage() {
           href={botLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#2AABEE] text-white font-bold hover:bg-[#229ED9] transition-colors text-lg"
+          className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#2AABEE] text-white font-bold hover:bg-[#229ED9] transition-colors text-lg"
         >
           <Send size={20} />
           Перейти в Telegram-бот
@@ -37,7 +37,7 @@ export function PaymentSuccessPage() {
 
         <a
           href="/"
-          className="inline-flex items-center gap-1.5 mt-6 text-sm text-text-muted hover:text-accent transition-colors"
+          className="inline-flex items-center gap-1.5 mt-6 text-sm text-text-muted hover:text-primary transition-colors"
         >
           <ArrowLeft size={14} />
           Вернуться на главную

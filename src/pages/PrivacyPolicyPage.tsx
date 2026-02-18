@@ -14,7 +14,7 @@ export function PrivacyPolicyPage() {
   const sections = t('privacyPolicy.sections', { returnObjects: true }) as PolicySection[];
 
   return (
-    <div className="min-h-screen bg-background text-text-primary">
+    <div className="min-h-screen bg-surface text-text-primary">
       <div className="max-w-4xl mx-auto px-4 py-8 md:py-16">
         <Button
           variant="secondary"
@@ -24,7 +24,7 @@ export function PrivacyPolicyPage() {
           ← {t('privacyPolicy.backButton', 'Назад на главную')}
         </Button>
 
-        <article className="prose prose-invert max-w-none">
+        <article className="prose max-w-none">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             {t('privacyPolicy.title')}
           </h1>

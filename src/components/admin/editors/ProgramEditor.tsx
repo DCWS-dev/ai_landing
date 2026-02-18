@@ -39,9 +39,9 @@ export function ProgramEditor() {
         <AdminInput label="Текст CTA" value={data.ctaText} onChange={(e) => setData({ ...data, ctaText: e.target.value })} />
 
         {data.days.map((day, i) => (
-          <div key={i} className="card-glass rounded-xl p-4 space-y-3">
+          <div key={i} className="card-clean rounded-xl p-4 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-accent">День {day.day}</span>
+              <span className="text-sm font-semibold text-primary">День {day.day}</span>
               <button onClick={() => removeDay(i)} className="text-xs text-red-400 hover:text-red-300 cursor-pointer">Удалить</button>
             </div>
             <AdminInput label="Тема дня" value={day.title} onChange={(e) => updateDay(i, { ...day, title: e.target.value })} />
@@ -51,7 +51,7 @@ export function ProgramEditor() {
           </div>
         ))}
 
-        <button onClick={addDay} className="px-4 py-2 rounded-lg border border-dashed border-white/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
+        <button onClick={addDay} className="px-4 py-2 rounded-lg border border-dashed border-contrast/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
           + Добавить день
         </button>
       </div>

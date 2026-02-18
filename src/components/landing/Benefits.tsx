@@ -1,45 +1,63 @@
-import { SectionWrapper } from '../shared/SectionWrapper';
-import { useContent } from '../../context/ContentContext';
 import { X } from 'lucide-react';
+import { useContent } from '../../context/ContentContext';
+import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 export function Benefits() {
   const { content } = useContent();
+  const { t } = useTranslation();
   const { benefits } = content;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const negativeItems = benefits.scenarios.slice(0, 3);
+  const positiveItem = benefits.scenarios[3] || '';
 
   return (
-    <SectionWrapper id='benefits' className='bg-surface'>
-      <div className='max-w-4xl mx-auto'>
-        <h2 className='text-3xl md:text-5xl font-bold text-center mb-16'>
-          Давай честно:
-          <br />
-          <span className='text-indigo-400'>За 1 час ты можешь:</span>
+    <motion.section
+      id="benefits"
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className="py-16 md:py-24 px-2 sm:px-4 md:px-8 bg-gradient-to-b from-[#2a2a2a] via-[#1e1e1e] to-[#141414]"
+    >
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-semibold text-center mb-16 leading-tight">
+          <span className="text-white block mb-2">{t('ui.benefitsTitle1')}</span>
+          <span className="text-primary block">{t('ui.benefitsTitle2')}</span>
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
-          <div className='space-y-6'>
-            {benefits.scenarios.slice(0, 3).map((item, i) => (
-              <div key={i} className='flex gap-4 p-4 rounded-xl bg-red-400/5 text-text-secondary'>
-                <X className='shrink-0 text-red-400' />
-                <p>{item}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Left: negative scenarios */}
+          <div className="space-y-4">
+            {negativeItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 p-5 rounded-2xl bg-[#ffe4e4] border border-rose-300/40"
+              >
+                <X className="shrink-0 mt-0.5 text-rose-500" size={20} />
+                <p className="text-[#555] text-base leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
 
-          <div className='relative'>
-             <div className='absolute inset-0 bg-green-400/20 blur-3xl' />
-             <div className='relative p-8 rounded-2xl bg-green-400/10 border border-green-400/20 text-center'>
-               <h3 className='text-2xl font-bold text-green-400 mb-4'>ИЛИ</h3>
-               <p className='text-xl text-white'>
-                 {benefits.scenarios[3].replace('ИЛИ', '')}
-               </p>
-               <div className='mt-8 pt-6 border-t border-green-400/20 text-sm text-green-300'>
-                 + понимание системы<br/>
-                 + первые внедрения
-               </div>
-             </div>
+          {/* Right: positive alternative */}
+          <div className="relative">
+            <div className="p-8 rounded-2xl bg-[#e8fcf0]/12 border border-emerald-500/25 text-center">
+              <h3 className="text-2xl font-bold text-emerald-600 mb-4 uppercase">{t('ui.benefitsOr')}</h3>
+              <p className="text-xl text-emerald-400/50 leading-relaxed">
+                {positiveItem.replace(/^(ИЛИ|АБО)\s*/i, '')}
+              </p>
+              <div className="mt-8 pt-6 border-t border-emerald-500/20 text-base text-emerald-500">
+                {t('ui.benefitsPlus1')}<br />
+                {t('ui.benefitsPlus2')}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </SectionWrapper>
+    </motion.section>
   );
 }

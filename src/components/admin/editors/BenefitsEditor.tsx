@@ -41,19 +41,19 @@ export function BenefitsEditor() {
               <input
                 value={stat.value}
                 onChange={(e) => updateStat(i, { ...stat, value: e.target.value })}
-                className="w-24 px-3 py-2 rounded-lg bg-surface border border-white/10 text-white text-sm focus:border-primary focus:outline-none"
+                className="w-24 px-3 py-2 rounded-lg bg-surface border border-contrast/10 text-text-primary text-sm focus:border-primary focus:outline-none"
                 placeholder="10+"
               />
               <input
                 value={stat.label}
                 onChange={(e) => updateStat(i, { ...stat, label: e.target.value })}
-                className="flex-1 px-3 py-2 rounded-lg bg-surface border border-white/10 text-white text-sm focus:border-primary focus:outline-none"
+                className="flex-1 px-3 py-2 rounded-lg bg-surface border border-contrast/10 text-text-primary text-sm focus:border-primary focus:outline-none"
                 placeholder="часов экономии"
               />
               <button onClick={() => removeStat(i)} className="px-3 py-2 rounded-lg bg-red-500/20 text-red-400 text-sm cursor-pointer">✕</button>
             </div>
           ))}
-          <button onClick={addStat} className="px-4 py-2 rounded-lg border border-dashed border-white/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
+          <button onClick={addStat} className="px-4 py-2 rounded-lg border border-dashed border-contrast/20 text-sm text-text-muted hover:border-primary hover:text-primary transition-colors cursor-pointer">
             + Добавить
           </button>
         </div>
