@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { isAuthorizedAdmin } from './_lib/auth';
-import { getAllUsers } from './_lib/db';
+import { isAuthorizedAdmin } from './_lib/auth.js';
+import { getAllUsers } from './_lib/db.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {

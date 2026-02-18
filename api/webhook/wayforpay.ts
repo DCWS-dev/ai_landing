@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import { updateUserStatus } from '../_lib/db';
-import { sendTelegramMessage, generateBotDeepLink } from '../_lib/telegram';
+import { updateUserStatus } from '../_lib/db.js';
+import { sendTelegramMessage, generateBotDeepLink } from '../_lib/telegram.js';
 
 /**
  * WayForPay Webhook Handler

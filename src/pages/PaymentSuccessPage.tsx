@@ -1,11 +1,13 @@
 import { useSearchParams } from 'react-router-dom';
 import { CheckCircle, Send, ArrowLeft } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TELEGRAM_BOT_USERNAME = import.meta.env.VITE_TELEGRAM_BOT_USERNAME || 'your_bot';
 
 export function PaymentSuccessPage() {
   const [searchParams] = useSearchParams();
   const orderId = searchParams.get('order_id') || '';
+  const { t } = useTranslation();
 
   const botLink = `https://t.me/${TELEGRAM_BOT_USERNAME}?start=${orderId}`;
 
@@ -16,9 +18,9 @@ export function PaymentSuccessPage() {
           <CheckCircle size={36} className="text-green-500" />
         </div>
 
-        <h1 className="text-2xl font-bold mb-2">Оплата прошла успешно!</h1>
+        <h1 className="text-2xl font-bold mb-2">{t('ui.paymentTitle')}</h1>
         <p className="text-text-secondary mb-6">
-          Спасибо за покупку! Для получения доступа к марафону перейдите в наш Telegram-бот и подтвердите участие.
+          {t('ui.paymentDesc')}
         </p>
 
         <a
@@ -28,11 +30,11 @@ export function PaymentSuccessPage() {
           className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#2AABEE] text-white font-bold hover:bg-[#229ED9] transition-colors text-lg"
         >
           <Send size={20} />
-          Перейти в Telegram-бот
+          {t('ui.paymentTelegram')}
         </a>
 
         <p className="text-xs text-text-muted mt-4">
-          Бот автоматически проверит вашу оплату и откроет доступ к материалам марафона.
+          {t('ui.paymentBotDesc')}
         </p>
 
         <a
@@ -40,7 +42,7 @@ export function PaymentSuccessPage() {
           className="inline-flex items-center gap-1.5 mt-6 text-sm text-text-muted hover:text-primary transition-colors"
         >
           <ArrowLeft size={14} />
-          Вернуться на главную
+          {t('ui.paymentBack')}
         </a>
       </div>
     </div>

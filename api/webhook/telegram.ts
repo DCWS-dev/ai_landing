@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getUser, getUserByEmail, getUserByTelegram } from '../_lib/db';
-import { sendTelegramMessage } from '../_lib/telegram';
+import { getUser, getUserByEmail, getUserByTelegram } from '../_lib/db.js';
+import { sendTelegramMessage } from '../_lib/telegram.js';
 
 /**
  * Telegram Bot Webhook Handler

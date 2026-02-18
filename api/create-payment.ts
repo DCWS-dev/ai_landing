@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createSignature } from './_lib/prodamus';
-import { createWayForPaySignature } from './_lib/wayforpay';
-import { saveUser } from './_lib/db';
+import { createSignature } from './_lib/prodamus.js';
+import { createWayForPaySignature } from './_lib/wayforpay.js';
+import { saveUser } from './_lib/db.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {

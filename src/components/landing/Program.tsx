@@ -60,7 +60,7 @@ export function Program() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    {day.format.includes('Трансляция') ? (
+                    {/трансляц|stream|live/i.test(day.format) ? (
                       <Play size={16} className="text-primary-light shrink-0 mt-0.5" />
                     ) : (
                       <BookOpen size={16} className="text-primary-light shrink-0 mt-0.5" />
