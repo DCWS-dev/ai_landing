@@ -14,6 +14,7 @@ export interface User {
   phone: string;
   telegram: string;
   amount: number;
+  currency?: string;
   status: 'pending' | 'paid' | 'failed';
   paidAt?: string;
   createdAt: string;

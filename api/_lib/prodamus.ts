@@ -51,7 +51,7 @@ export function verifySignature(
 ): boolean {
   const expected = createSignature(data, secretKey);
   return crypto.timingSafeEqual(
-    Buffer.from(expected, 'hex'),
-    Buffer.from(signatureFromHeader, 'hex')
+    new Uint8Array(Buffer.from(expected, 'hex')),
+    new Uint8Array(Buffer.from(signatureFromHeader, 'hex'))
   );
 }
