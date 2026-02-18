@@ -1,6 +1,10 @@
 import crypto from 'crypto';
 
-const AUTH_SECRET = () => process.env.AUTH_SECRET || 'change-this-secret-in-production';
+const AUTH_SECRET = () => {
+  const secret = process.env.AUTH_SECRET;
+  if (!secret) throw new Error('AUTH_SECRET env var is not set');
+  return secret;
+};
 
 export function verifyAdminPassword(password: string): boolean {
   const adminPassword = process.env.ADMIN_PASSWORD;

@@ -14,8 +14,9 @@ const DIST = join(ROOT, "dist");
 const PUBLIC = join(ROOT, "public");
 const SRC = join(ROOT, "src");
 
-/* ── Load VITE_* env vars from .env ── */
+/* ── Load VITE_* env vars from .env + process.env ── */
 function loadViteEnvDefines(mode: string): Record<string, string> {
+  // 1. Try .env file (local dev)
   let envContent = '';
   try { envContent = require('fs').readFileSync(join(ROOT, '.env'), 'utf-8'); } catch {}
   const viteVars: Record<string, string> = {};
@@ -27,6 +28,10 @@ function loadViteEnvDefines(mode: string): Record<string, string> {
     const key = trimmed.slice(0, eqIdx).trim();
     const val = trimmed.slice(eqIdx + 1).trim();
     if (key.startsWith('VITE_')) viteVars[key] = val;
+  }
+  // 2. Override with process.env (Vercel injects env vars here)
+  for (const [key, val] of Object.entries(process.env)) {
+    if (key.startsWith('VITE_') && val) viteVars[key] = val;
   }
   const defines: Record<string, string> = {
     'process.env.NODE_ENV': JSON.stringify(mode),
