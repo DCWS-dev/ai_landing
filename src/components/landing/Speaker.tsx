@@ -19,15 +19,11 @@ export function Speaker() {
           <div className="shrink-0 relative">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-surface-light p-1 border border-contrast/10">
               <div className="w-full h-full rounded-full bg-surface-light overflow-hidden relative flex items-center justify-center">
-                {speaker.photoUrl ? (
-                  <img
-                    src={speaker.photoUrl}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <span className="text-8xl">👩‍💻</span>
-                )}
+                <img
+                  src={speaker.photoUrl || '/ava_1.png'}
+                  alt={speaker.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

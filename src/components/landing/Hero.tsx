@@ -36,7 +36,7 @@ export function Hero() {
                   {line}
                 </span>
               ) : (
-                <span key={i} className="tape text-2xl md:text-3xl lg:text-4xl mb-2 block">
+                <span key={i} className="text-2xl md:text-3xl lg:text-4xl mb-2 block text-primary">
                   {line}
                 </span>
               )

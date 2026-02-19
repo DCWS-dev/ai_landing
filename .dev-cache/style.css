@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.0 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -66,8 +66,6 @@
     --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
-    --text-8xl: 6rem;
-    --text-8xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -283,6 +281,15 @@
   }
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
+  }
+  .start {
+    inset-inline-start: var(--spacing);
+  }
+  .\!end {
+    inset-inline-end: var(--spacing) !important;
+  }
+  .end {
+    inset-inline-end: var(--spacing);
   }
   .-top-20 {
     top: calc(var(--spacing) * -20);
@@ -1019,10 +1026,6 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-8xl {
-    font-size: var(--text-8xl);
-    line-height: var(--tw-leading, var(--text-8xl--line-height));
   }
   .text-base {
     font-size: var(--text-base);
