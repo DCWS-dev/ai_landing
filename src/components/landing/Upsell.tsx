@@ -9,7 +9,7 @@ export function Upsell() {
   const { upsell } = content;
 
   return (
-    <SectionWrapper id="upsell" className="bg-surface-light">
+    <SectionWrapper id="upsell" className="bg-surface">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-semibold mb-4">
           {upsell.title}

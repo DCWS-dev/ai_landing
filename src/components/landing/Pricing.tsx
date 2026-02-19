@@ -15,8 +15,28 @@ export function Pricing() {
   const priceDisplay = currency === 'RUB' ? '1 990 ₽' : '890 ₴';
 
   return (
-    <SectionWrapper id="pricing" className="bg-surface-light">
-      <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12">
+    <SectionWrapper id="pricing" className="bg-surface relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-16 right-8 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute bottom-16 left-8 w-64 h-64 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      </div>
+
+      {/* Moneyhand decoration */}
+      <img
+        src="/moneyhand.png"
+        alt=""
+        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-40 lg:w-52 opacity-50 drop-shadow-lg animate-float pointer-events-none z-0"
+      />
+
+      {/* Dollars decoration */}
+      <img
+        src="/dollars.png"
+        alt=""
+        className="hidden md:block absolute right-0 top-1/3 w-32 lg:w-44 opacity-40 drop-shadow-lg animate-float animation-delay-2000 pointer-events-none z-0"
+      />
+
+      <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12 relative z-10">
         {pricing.title}
       </h2>
 

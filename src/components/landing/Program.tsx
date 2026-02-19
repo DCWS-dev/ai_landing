@@ -12,8 +12,14 @@ export function Program() {
   const [openDay, setOpenDay] = useState<number | null>(null);
 
   return (
-    <SectionWrapper id="program" className="bg-surface">
-      <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12">
+    <SectionWrapper id="program" className="bg-surface relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-8 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-blob animation-delay-4000" />
+        <div className="absolute bottom-16 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl animate-blob" />
+      </div>
+
+      <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12 relative z-10">
         {program.title}
       </h2>
 

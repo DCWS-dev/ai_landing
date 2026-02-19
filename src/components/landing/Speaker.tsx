@@ -8,8 +8,14 @@ export function Speaker() {
   const { speaker } = content;
 
   return (
-    <SectionWrapper id="speaker" className="bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionWrapper id="speaker" className="bg-surface relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-16 right-1/4 w-80 h-80 bg-primary/6 rounded-full blur-3xl animate-blob" />
+        <div className="absolute bottom-16 left-8 w-72 h-72 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl md:text-5xl font-semibold text-left md:text-center mb-16">
           {t('ui.speakerTitle')}
         </h2>

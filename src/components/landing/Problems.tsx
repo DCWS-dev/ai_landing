@@ -8,8 +8,14 @@ export function Problems() {
   const { problems } = content;
 
   return (
-    <SectionWrapper id='problems' className='bg-surface-light'>
-      <div className='max-w-4xl mx-auto text-left md:text-center'>
+    <SectionWrapper id='problems' className='bg-surface relative overflow-hidden'>
+      {/* Background blobs */}
+      <div className='absolute inset-0 overflow-hidden pointer-events-none'>
+        <div className='absolute top-20 right-8 w-72 h-72 bg-red-400/5 rounded-full blur-3xl animate-blob' />
+        <div className='absolute bottom-16 left-10 w-64 h-64 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000' />
+      </div>
+
+      <div className='max-w-4xl mx-auto text-left md:text-center relative z-10'>
         <div className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-red-400 mb-8'>
           <AlertCircle size={32} />
         </div>

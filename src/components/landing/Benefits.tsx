@@ -21,9 +21,16 @@ export function Benefits() {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="py-16 md:py-24 px-2 sm:px-4 md:px-8 bg-gradient-to-b from-[#2a2a2a] via-[#1e1e1e] to-[#141414]"
+      className="py-16 md:py-24 px-2 sm:px-4 md:px-8 bg-[#1e1e1e] relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto">
+      {/* Animated background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-16 right-8 w-80 h-80 bg-rose-500/8 rounded-full blur-3xl animate-blob" />
+        <div className="absolute bottom-20 left-8 w-72 h-72 bg-emerald-500/6 rounded-full blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <h2 className="text-3xl md:text-5xl font-semibold text-center mb-16 leading-tight">
           <span className="text-white block mb-2">{t('ui.benefitsTitle1')}</span>
           <span className="text-primary block">{t('ui.benefitsTitle2')}</span>
