@@ -82,6 +82,8 @@ export interface TestimonialsContent {
 export interface PricingContent {
   title: string;
   price: string;
+  oldPrice: string;
+  countdownDate: string; // ISO date string for pricing timer
   features: string[];
   bonuses: string[];
   ctaText: string;

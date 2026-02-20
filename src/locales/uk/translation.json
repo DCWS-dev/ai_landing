@@ -194,7 +194,9 @@
   },
   "pricing": {
     "title": "Стань лідером у своїй ніші",
-    "price": "890 ₴",
+    "price": "665 ₴",
+    "oldPrice": "2 230 ₴",
+    "countdownDate": "",
     "features": [
       "Найкорисніший курс, який ти купиш в 2026 році",
       "Впровадження ШІ за 7 днів"
@@ -341,13 +343,14 @@
     "formPhoneRU": "Телефон (RU)",
     "formPhoneUA": "Телефон (UA)",
     "formTelegram": "Telegram username",
-    "formSubmitRUB": "Оплатити 1 990 ₽",
-    "formSubmitUAH": "Оплатити 890 ₴",
+    "formSubmitRUB": "Оплатити 1 490 ₽",
+    "formSubmitUAH": "Оплатити 665 ₴",
     "formRedirecting": "Перенаправлення на оплату...",
     "formConsent": "Натискаючи кнопку, ви погоджуєтесь з",
     "formConsentLink": "політикою конфіденційності",
     "bonuses": "Бонуси:",
     "safePayment": "Безпечна оплата • Гарантія повернення 2 дні",
+    "discountUntil": "Ціна зі знижкою до:",
     "fullAccess": "за повний 7-денний доступ",
     "floatingCta": "Записатися на марафон",
     "navSignup": "Записатися",

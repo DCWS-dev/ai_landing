@@ -135,7 +135,7 @@ const html = `<!DOCTYPE html>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="7-дневный марафон «Бизнес с ИИ» — автоматизируй бизнес, получи первые лиды и экономь до 10 часов в неделю. Всего 1 990 ₽" />
+    <meta name="description" content="7-дневный марафон «Бизнес с ИИ» — автоматизируй бизнес, получи первые лиды и экономь до 10 часов в неделю. Всего 1 490 ₽" />
     <meta property="og:title" content="ИИ-перезагрузка: Автоматизируй бизнес за 7 дней!" />
     <meta property="og:description" content="Игровой челлендж для предпринимателей, блогеров и SMM-специалистов. 50+ промптов, шаблоны, живые трансляции." />
     <meta property="og:type" content="website" />

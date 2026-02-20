@@ -40,60 +40,62 @@ export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('/api/create-payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, currency }),
-      });
+      // --- PAYMENTS TEMPORARILY DISABLED ---
+      // const res = await fetch('/api/create-payment', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ ...data, currency }),
+      // });
+      //
+      // if (!res.ok) {
+      //   const err = await res.json().catch(() => ({}));
+      //   throw new Error(err.error || t('ui.errorPayment'));
+      // }
+      //
+      // const responseData = await res.json();
+      //
+      // onSuccess?.();
+      //
+      // if (responseData.paymentSystem === 'wayforpay') {
+      //   const form = document.createElement('form');
+      //   form.method = 'POST';
+      //   form.action = responseData.url;
+      //   form.target = '_self';
+      //   for (const [key, value] of Object.entries(responseData.data)) {
+      //     if (Array.isArray(value)) {
+      //        value.forEach(v => {
+      //           const input = document.createElement('input');
+      //           input.type = 'hidden';
+      //           input.name = key + '[]';
+      //           input.value = String(v);
+      //           form.appendChild(input);
+      //        });
+      //     } else {
+      //       const input = document.createElement('input');
+      //       input.type = 'hidden';
+      //       input.name = key;
+      //       input.value = String(value);
+      //       form.appendChild(input);
+      //     }
+      //   }
+      //   document.body.appendChild(form);
+      //   form.submit();
+      // } else {
+      //   window.location.href = responseData.paymentUrl;
+      // }
+      // --- END PAYMENTS TEMPORARILY DISABLED ---
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || t('ui.errorPayment'));
-      }
-
-      const responseData = await res.json();
-      
+      // Temporarily just log the data and call onSuccess
+      console.log('Form submitted (payments disabled):', data);
       onSuccess?.();
-
-      if (responseData.paymentSystem === 'wayforpay') {
-        // Handle WayForPay: Create and submit invisible form
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = responseData.url;
-        form.target = '_self'; // or _blank
-
-        for (const [key, value] of Object.entries(responseData.data)) {
-          if (Array.isArray(value)) {
-             value.forEach(v => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key + '[]'; // WayForPay array convention
-                input.value = String(v);
-                form.appendChild(input);
-             });
-          } else {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = String(value);
-            form.appendChild(input);
-          }
-        }
-        
-        document.body.appendChild(form);
-        form.submit();
-        
-      } else {
-        // Default to Prodamus logic (URL redirect)
-         window.location.href = responseData.paymentUrl;
-      }
 
     } catch (err) {
       setError(err instanceof Error ? err.message : t('ui.errorGeneral'));
     } finally {
-      if (typeof window !== 'undefined' && !document.querySelector('form[action*="wayforpay"]')) {
-          setLoading(false);
-      }
+      // if (typeof window !== 'undefined' && !document.querySelector('form[action*="wayforpay"]')) {
+      //     setLoading(false);
+      // }
+      setLoading(false);
     }
   };
 

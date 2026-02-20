@@ -99,7 +99,7 @@ async function handleCreatePayment(req: Request): Promise<Response> {
 
   const siteUrl = process.env.SITE_URL || "https://your-site.vercel.app";
   const orderId = `M-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  const amount = currency === "UAH" ? 890 : 1990;
+  const amount = currency === "UAH" ? 665 : 1490;
 
   await saveUser({
     orderId,
@@ -120,7 +120,7 @@ async function handleCreatePayment(req: Request): Promise<Response> {
       process.env.WAYFORPAY_SECRET_KEY || "flk3409refn54t54t*FNJret";
     const merchantDomainName = new URL(siteUrl).hostname;
     const orderDate = Math.floor(Date.now() / 1000);
-    const products = [{ name: "7-денний марафон «Бізнес з ШІ»", price: 890, count: 1 }];
+    const products = [{ name: "7-денний марафон «Бізнес з ШІ»", price: 665, count: 1 }];
 
     const data = {
       merchantAccount,
@@ -163,7 +163,7 @@ async function handleCreatePayment(req: Request): Promise<Response> {
       customer_email: email,
       customer_extra: `Имя: ${name}${telegram ? `, Telegram: ${telegram}` : ""}`,
       products: [
-        { name: '7-дневный марафон «Бизнес с ИИ»', price: "1990", quantity: "1" },
+        { name: '7-дневный марафон «Бизнес с ИИ»', price: "1490", quantity: "1" },
       ],
       do: "pay",
       urlReturn: siteUrl,

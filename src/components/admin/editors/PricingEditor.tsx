@@ -20,6 +20,8 @@ export function PricingEditor() {
       <div className="space-y-4">
         <AdminInput label="Заголовок" value={data.title} onChange={(e) => setData({ ...data, title: e.target.value })} />
         <AdminInput label="Цена" value={data.price} onChange={(e) => setData({ ...data, price: e.target.value })} />
+        <AdminInput label="Старая цена (зачёркнутая)" value={data.oldPrice} onChange={(e) => setData({ ...data, oldPrice: e.target.value })} />
+        <AdminInput label="Дата окончания таймера (ISO)" value={data.countdownDate} onChange={(e) => setData({ ...data, countdownDate: e.target.value })} />
         <AdminInput label="Текст CTA" value={data.ctaText} onChange={(e) => setData({ ...data, ctaText: e.target.value })} />
         <AdminListEditor label="Включено в тариф" items={data.features} onChange={(features) => setData({ ...data, features })} />
         <AdminListEditor label="Бонусы" items={data.bonuses} onChange={(bonuses) => setData({ ...data, bonuses })} />

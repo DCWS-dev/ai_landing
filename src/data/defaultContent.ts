@@ -163,7 +163,9 @@ export const defaultContent: SiteContent = {
   },
   pricing: {
     title: 'Стань лидером в своей нише',
-    price: '1 990 ₽',
+    price: '1 490 ₽',
+    oldPrice: '4 990 ₽',
+    countdownDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
     features: [
       'Самый полезный курс, который ты купишь в 2026 году',
       'Внедрение ИИ за 7 дней',

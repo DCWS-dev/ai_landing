@@ -16,7 +16,7 @@ export default function App() {
           <AuthProvider>
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/payment-success" element={<PaymentSuccessPage />} />
+              {/* <Route path="/payment-success" element={<PaymentSuccessPage />} /> */}
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/terms" element={<TermsOfServicePage />} />
               <Route path="/admin/*" element={<AdminPage />} />

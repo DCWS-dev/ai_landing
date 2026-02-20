@@ -194,7 +194,9 @@
   },
   "pricing": {
     "title": "Стань лидером в своей нише",
-    "price": "1 990 ₽",
+    "price": "1 490 ₽",
+    "oldPrice": "4 990 ₽",
+    "countdownDate": "",
     "features": [
       "Самый полезный курс, который ты купишь в 2026 году",
       "Внедрение ИИ за 7 дней"
@@ -357,13 +359,14 @@
     "formPhoneRU": "Телефон (RU)",
     "formPhoneUA": "Телефон (UA)",
     "formTelegram": "Telegram username",
-    "formSubmitRUB": "Оплатить 1 990 ₽",
-    "formSubmitUAH": "Оплатити 890 ₴",
+    "formSubmitRUB": "Оплатить 1 490 ₽",
+    "formSubmitUAH": "Оплатити 665 ₴",
     "formRedirecting": "Перенаправление на оплату...",
     "formConsent": "Нажимая кнопку, вы соглашаетесь с",
     "formConsentLink": "политикой конфиденциальности",
     "bonuses": "Бонусы:",
     "safePayment": "Безопасная оплата • Гарантия возврата 2 дня",
+    "discountUntil": "Цена со скидкой:",
     "fullAccess": "за полный 7-дневный доступ",
     "floatingCta": "Записаться на марафон",
     "navSignup": "Записаться",

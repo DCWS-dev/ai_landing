@@ -1,18 +1,23 @@
 import { useState } from 'react';
-import { Check, Gift, Shield } from 'lucide-react';
+import { Check, Gift } from 'lucide-react';
+// import { Shield } from 'lucide-react'; // TEMPORARILY DISABLED (payments off)
 import { useContent } from '../../context/ContentContext';
 import { useTranslation } from 'react-i18next';
 import { SectionWrapper } from '../shared/SectionWrapper';
-import { LeadForm } from '../shared/LeadForm';
+// import { LeadForm } from '../shared/LeadForm'; // TEMPORARILY DISABLED (payments off)
+import { CountdownTimer } from '../shared/CountdownTimer';
+import { defaultContent } from '../../data/defaultContent';
 
 export function Pricing() {
   const { content } = useContent();
   const { t } = useTranslation();
   const { pricing } = content;
-  const [currency, setCurrency] = useState<'RUB' | 'UAH'>('RUB');
-  const [paid, setPaid] = useState(false);
+  const [currency] = useState<'RUB' | 'UAH'>('RUB');
+  // const [paid, setPaid] = useState(false); // TEMPORARILY DISABLED (payments off)
 
-  const priceDisplay = currency === 'RUB' ? '1 990 ₽' : '890 ₴';
+  const priceDisplay = currency === 'RUB' ? '1 490 ₽' : '665 ₴';
+  const oldPriceDisplay = currency === 'RUB' ? '4 990 ₽' : '2 230 ₴';
+  const timerDate = pricing.countdownDate || defaultContent.pricing.countdownDate;
 
   return (
     <SectionWrapper id="pricing" className="bg-surface relative overflow-hidden">
@@ -44,8 +49,8 @@ export function Pricing() {
         <div className="card-clean rounded-3xl p-8 md:p-10 border-primary/20 border relative overflow-hidden">
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
 
-          {/* Currency Toggle */}
-          <div className="flex justify-center mb-6">
+          {/* Currency Toggle — TEMPORARILY DISABLED (payments off) */}
+          {/* <div className="flex justify-center mb-6">
             <div className="bg-surface-light p-1 rounded-full border border-contrast/10 flex">
               <button
                 onClick={() => setCurrency('RUB')}
@@ -64,11 +69,20 @@ export function Pricing() {
                 UAH 🇺🇦
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className="text-center mb-8 relative">
+            <p className="text-xl md:text-2xl text-text-muted line-through mb-1">{oldPriceDisplay}</p>
             <p className="text-5xl md:text-6xl font-extrabold text-text-primary mb-2">{priceDisplay}</p>
-            <p className="text-text-muted">{t('ui.fullAccess')}</p>
+            <p className="text-text-muted mb-4">{t('ui.fullAccess')}</p>
+            {timerDate && (
+              <div className="mt-2">
+                <p className="text-sm font-semibold text-primary mb-2">{t('ui.discountUntil')}</p>
+                <div className="flex justify-center">
+                  <CountdownTimer targetDate={timerDate} />
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="space-y-3 mb-8">
@@ -97,15 +111,15 @@ export function Pricing() {
             </div>
           )}
 
-          {/* Inline form — like reference */}
-          <div className="border-t border-contrast/10 pt-6">
+          {/* Payment form — TEMPORARILY DISABLED */}
+          {/* <div className="border-t border-contrast/10 pt-6">
             <LeadForm onSuccess={() => setPaid(true)} currency={currency} />
-          </div>
+          </div> */}
 
-          <div className="flex items-center justify-center gap-2 mt-4">
+          {/* <div className="flex items-center justify-center gap-2 mt-4">
             <Shield size={14} className="text-text-muted" />
             <p className="text-xs text-text-muted">{t('ui.safePayment')}</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </SectionWrapper>

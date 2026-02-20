@@ -18,7 +18,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   
   // Generate unique order ID
   const orderId = `M-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  const amount = currency === 'UAH' ? 890 : 1990;
+  const amount = currency === 'UAH' ? 665 : 1490;
 
   // Save user to DB with pending status
   await saveUser({
@@ -43,7 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const products = [
       {
         name: '7-денний марафон «Бізнес з ШІ»',
-        price: 890,
+        price: 665,
         count: 1,
       }
     ];
@@ -102,7 +102,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       products: [
         {
           name: '7-дневный марафон «Бизнес с ИИ»',
-          price: '1990',
+          price: '1490',
           quantity: '1',
         },
       ],
