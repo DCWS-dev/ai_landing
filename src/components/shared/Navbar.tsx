@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 
 export function Navbar() {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,11 +35,6 @@ export function Navbar() {
     el?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'ru' ? 'uk' : 'ru';
-    i18n.changeLanguage(newLang);
-  };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -62,14 +57,6 @@ export function Navbar() {
               {link.label}
             </button>
           ))}
-          
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 text-sm text-text-secondary hover:text-text-primary transition-colors uppercase"
-          >
-            <Globe size={16} />
-            {i18n.language}
-          </button>
 
           <button
             onClick={toggleTheme}
@@ -94,12 +81,6 @@ export function Navbar() {
             className="flex items-center justify-center w-9 h-9 rounded-lg text-text-secondary hover:text-primary transition-all"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-           <button 
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 text-sm text-text-secondary hover:text-text-primary transition-colors uppercase"
-          >
-            {i18n.language}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

@@ -18,7 +18,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   
   // Generate unique order ID
   const orderId = `M-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  const amount = currency === 'UAH' ? 665 : 1490;
+
+  // Amount & product name by currency
+  const PRICE_MAP: Record<string, { amount: number; product: string }> = {
+    RUB: { amount: 1490, product: '7-дневный марафон «Бизнес с ИИ»' },
+    UAH: { amount: 665,  product: '7-денний марафон «Бізнес з ШІ»' },
+    KZT: { amount: 7900, product: '7 күндік марафон «ЖИ-мен бизнес»' },
+    USD: { amount: 15,   product: '7-day marathon «Business with AI»' },
+  };
+  const { amount, product } = PRICE_MAP[currency] || PRICE_MAP.USD;
 
   // Save user to DB with pending status
   await saveUser({
@@ -42,8 +50,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const products = [
       {
-        name: '7-денний марафон «Бізнес з ШІ»',
-        price: 665,
+        name: product,
+        price: amount,
         count: 1,
       }
     ];
@@ -83,7 +91,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
   } else {
-    // Prodamus Logic (Default RUB)
+    // Prodamus Logic (RUB / KZT / USD)
     const prodamusUrl = process.env.PRODAMUS_FORM_URL;
     const secretKey = process.env.PRODAMUS_SECRET_KEY;
 
@@ -101,8 +109,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       customer_extra: `Имя: ${name}${telegram ? `, Telegram: ${telegram}` : ''}`,
       products: [
         {
-          name: '7-дневный марафон «Бизнес с ИИ»',
-          price: '1490',
+          name: product,
+          price: String(amount),
           quantity: '1',
         },
       ],

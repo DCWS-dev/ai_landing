@@ -15,6 +15,13 @@ export function Problems() {
         <div className='absolute bottom-16 left-10 w-64 h-64 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000' />
       </div>
 
+      {/* Alert decoration */}
+      <img
+        src='/alert.png'
+        alt=''
+        className='hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-28 lg:w-36 opacity-50 drop-shadow-lg animate-float pointer-events-none z-0'
+      />
+
       <div className='max-w-4xl mx-auto text-left md:text-center relative z-10'>
         <div className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-red-400 mb-8'>
           <AlertCircle size={32} />

@@ -15,6 +15,13 @@ export function Audience() {
         <div className="absolute bottom-16 right-8 w-80 h-80 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
+      {/* Case decoration */}
+      <img
+        src="/case.png"
+        alt=""
+        className="hidden md:block absolute right-0 top-1/3 w-32 lg:w-44 opacity-45 drop-shadow-lg animate-float animation-delay-2000 pointer-events-none z-0"
+      />
+
       <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12 relative z-10">
         {audience.title}
       </h2>

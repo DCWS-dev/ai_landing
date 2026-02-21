@@ -15,6 +15,23 @@ export function Speaker() {
         <div className="absolute bottom-16 left-8 w-72 h-72 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
+      {/* Books decorations — scattered chaotically */}
+      <img
+        src="/books.png"
+        alt=""
+        className="hidden md:block absolute left-2 top-[15%] w-20 lg:w-28 opacity-35 drop-shadow-lg animate-float pointer-events-none z-0 -rotate-12"
+      />
+      <img
+        src="/books.png"
+        alt=""
+        className="hidden md:block absolute right-4 top-[10%] w-16 lg:w-24 opacity-30 drop-shadow-lg animate-float animation-delay-2000 pointer-events-none z-0 rotate-6"
+      />
+      <img
+        src="/books.png"
+        alt=""
+        className="hidden md:block absolute left-[8%] bottom-[12%] w-14 lg:w-20 opacity-25 drop-shadow-lg animate-float animation-delay-4000 pointer-events-none z-0 rotate-[20deg]"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl md:text-5xl font-semibold text-left md:text-center mb-16">
           {t('ui.speakerTitle')}

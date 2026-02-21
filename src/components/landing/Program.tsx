@@ -19,6 +19,13 @@ export function Program() {
         <div className="absolute bottom-16 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl animate-blob" />
       </div>
 
+      {/* Calendar decoration */}
+      <img
+        src="/calendar.png"
+        alt=""
+        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-32 lg:w-44 opacity-45 drop-shadow-lg animate-float animation-delay-4000 pointer-events-none z-0"
+      />
+
       <h2 className="text-2xl md:text-4xl font-semibold text-left md:text-center mb-12 relative z-10">
         {program.title}
       </h2>

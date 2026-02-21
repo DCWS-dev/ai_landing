@@ -1,27 +1,28 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 import ru from './locales/ru/translation.json';
 import uk from './locales/uk/translation.json';
+import kk from './locales/kk/translation.json';
+import en from './locales/en/translation.json';
 
+// Language is set automatically by GeoProvider (IP + browser language).
+// No LanguageDetector — no manual switching.
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
       ru: { translation: ru },
       uk: { translation: uk },
+      kk: { translation: kk },
+      en: { translation: en },
     },
-    fallbackLng: 'ru',
+    lng: 'en',        // initial placeholder; GeoProvider overrides immediately
+    fallbackLng: 'en',
     debug: false,
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false,
     },
-    supportedLngs: ['ru', 'uk'],
-    detection: {
-      order: ['queryString', 'cookie', 'localStorage', 'navigator'],
-      caches: ['localStorage', 'cookie'],
-    },
+    supportedLngs: ['ru', 'uk', 'kk', 'en'],
   });
 
 export default i18n;

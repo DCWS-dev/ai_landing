@@ -260,9 +260,6 @@
   .pointer-events-none {
     pointer-events: none;
   }
-  .invisible {
-    visibility: hidden;
-  }
   .visible {
     visibility: visible;
   }
@@ -317,6 +314,12 @@
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
+  .top-\[10\%\] {
+    top: 10%;
+  }
+  .top-\[15\%\] {
+    top: 15%;
+  }
   .-right-20 {
     right: calc(var(--spacing) * -20);
   }
@@ -350,6 +353,9 @@
   .bottom-32 {
     bottom: calc(var(--spacing) * 32);
   }
+  .bottom-\[12\%\] {
+    bottom: 12%;
+  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
@@ -359,6 +365,9 @@
   .left-1\/4 {
     left: calc(1 / 4 * 100%);
   }
+  .left-2 {
+    left: calc(var(--spacing) * 2);
+  }
   .left-4 {
     left: calc(var(--spacing) * 4);
   }
@@ -367,6 +376,9 @@
   }
   .left-10 {
     left: calc(var(--spacing) * 10);
+  }
+  .left-\[8\%\] {
+    left: 8%;
   }
   .z-0 {
     z-index: 0;
@@ -545,6 +557,9 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-24 {
     width: calc(var(--spacing) * 24);
   }
@@ -611,6 +626,9 @@
   .shrink-0 {
     flex-shrink: 0;
   }
+  .grow {
+    flex-grow: 1;
+  }
   .-translate-x-full {
     --tw-translate-x: -100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -623,8 +641,17 @@
     --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .-rotate-12 {
+    rotate: calc(12deg * -1);
+  }
+  .rotate-6 {
+    rotate: 6deg;
+  }
   .rotate-180 {
     rotate: 180deg;
+  }
+  .rotate-\[20deg\] {
+    rotate: 20deg;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -1314,8 +1341,20 @@
       color: var(--color-text-muted);
     }
   }
+  .opacity-25 {
+    opacity: 25%;
+  }
+  .opacity-30 {
+    opacity: 30%;
+  }
+  .opacity-35 {
+    opacity: 35%;
+  }
   .opacity-40 {
     opacity: 40%;
+  }
+  .opacity-45 {
+    opacity: 45%;
   }
   .opacity-50 {
     opacity: 50%;
@@ -1821,6 +1860,21 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .lg\:w-20 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:w-24 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 24);
+    }
+  }
+  .lg\:w-28 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 28);
     }
   }
   .lg\:w-36 {

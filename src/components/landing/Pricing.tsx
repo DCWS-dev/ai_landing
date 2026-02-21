@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Check, Gift } from 'lucide-react';
 // import { Shield } from 'lucide-react'; // TEMPORARILY DISABLED (payments off)
 import { useContent } from '../../context/ContentContext';
@@ -12,11 +11,11 @@ export function Pricing() {
   const { content } = useContent();
   const { t } = useTranslation();
   const { pricing } = content;
-  const [currency] = useState<'RUB' | 'UAH'>('RUB');
   // const [paid, setPaid] = useState(false); // TEMPORARILY DISABLED (payments off)
 
-  const priceDisplay = currency === 'RUB' ? '1 490 ₽' : '665 ₴';
-  const oldPriceDisplay = currency === 'RUB' ? '4 990 ₽' : '2 230 ₴';
+  // Price comes from the active locale's translation file (already currency-correct)
+  const priceDisplay = pricing.price;
+  const oldPriceDisplay = pricing.oldPrice;
   const timerDate = pricing.countdownDate || defaultContent.pricing.countdownDate;
 
   return (

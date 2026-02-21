@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Loader2, AlertTriangle } from 'lucide-react';
 import { Button } from './Button';
+import { useGeo } from '../../context/GeoContext';
 
 interface LeadFormData {
   name: string;
@@ -13,14 +14,14 @@ interface LeadFormData {
 
 interface LeadFormProps {
   onSuccess?: () => void;
-  currency?: 'RUB' | 'UAH';
   prefill?: { name?: string; phone?: string };
 }
 
-export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps) {
+export function LeadForm({ onSuccess, prefill }: LeadFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { t } = useTranslation();
+  const { currency, country } = useGeo();
 
   const {
     register,
@@ -33,8 +34,12 @@ export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps
     },
   });
 
-  const isUAH = currency === 'UAH';
-  const phonePlaceholder = isUAH ? '+380 (XX) XXX-XX-XX' : '+7 (900) 123-45-67';
+  // Phone placeholder based on detected country
+  const phonePlaceholder =
+    country === 'UA' ? '+380 (XX) XXX-XX-XX' :
+    country === 'KZ' ? '+7 (7XX) XXX-XX-XX' :
+    country === 'RU' ? '+7 (900) 123-45-67' :
+    '+1 (XXX) XXX-XXXX';
 
   const onSubmit = async (data: LeadFormData) => {
     setLoading(true);
@@ -86,15 +91,12 @@ export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps
       // --- END PAYMENTS TEMPORARILY DISABLED ---
 
       // Temporarily just log the data and call onSuccess
-      console.log('Form submitted (payments disabled):', data);
+      console.log('Form submitted (payments disabled):', data, 'currency:', currency);
       onSuccess?.();
 
     } catch (err) {
       setError(err instanceof Error ? err.message : t('ui.errorGeneral'));
     } finally {
-      // if (typeof window !== 'undefined' && !document.querySelector('form[action*="wayforpay"]')) {
-      //     setLoading(false);
-      // }
       setLoading(false);
     }
   };
@@ -132,17 +134,19 @@ export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps
 
       <div>
         <label className="block text-sm text-text-secondary mb-1">
-          {isUAH ? t('ui.formPhoneUA') : t('ui.formPhoneRU')}
+          {t('ui.formPhone')}
         </label>
         <input
           {...register('phone', {
             required: t('ui.validPhone'),
             validate: (value) => {
                const digits = value.replace(/\D/g, '');
-               if (isUAH) {
-                 return (digits.length === 12 && digits.startsWith('380')) || (digits.length === 10 && digits.startsWith('0')) || t('ui.validPhoneUA');
+               if (country === 'UA') {
+                 return (digits.length === 12 && digits.startsWith('380')) || (digits.length === 10 && digits.startsWith('0')) || t('ui.validPhone');
+               } else if (country === 'RU' || country === 'KZ') {
+                 return (digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'))) || t('ui.validPhone');
                } else {
-                 return (digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'))) || t('ui.validPhoneRU');
+                 return digits.length >= 7 || t('ui.validPhone');
                }
             }
           })}
@@ -177,7 +181,7 @@ export function LeadForm({ onSuccess, currency = 'RUB', prefill }: LeadFormProps
             {t('ui.formRedirecting')}
           </>
         ) : (
-          currency === 'UAH' ? t('ui.formSubmitUAH') : t('ui.formSubmitRUB')
+          t('ui.formSubmit')
         )}
       </Button>
 

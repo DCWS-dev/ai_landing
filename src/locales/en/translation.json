@@ -1,0 +1,409 @@
+{
+  "hero": {
+    "title": "AI for Business\nHow to implement AI in business in 7 days\nand not lose clients in 2026",
+    "subtitle": "A practical course for entrepreneurs, experts, and brands.\nIn 7 days you will integrate AI into content, sales, analytics, and automation.",
+    "bullets": [
+      "Start right after payment",
+      "7 lessons of 15–25 minutes",
+      "Daily practice"
+    ],
+    "ctaText": "Get access",
+    "secondaryCtaText": "View program",
+    "countdownDate": "2026-02-18T00:00:00.000Z"
+  },
+  "problems": {
+    "title": "AI is a must-have for business!",
+    "problems": [
+      "While you're struggling with content — your competitors are automating and selling.",
+      "In 2026 there are only 2 options: either you lead the market or you fall behind."
+    ],
+    "solutionText": "Your solution? START EARNING"
+  },
+  "audience": {
+    "title": "This mini-course is for you if:",
+    "cards": [
+      {
+        "role": "Entrepreneur",
+        "icon": "💼",
+        "pains": [
+          "tired of doing everything yourself",
+          "Everything on your shoulders?"
+        ],
+        "results": [
+          "Implement AI",
+          "Eliminate manual chaos"
+        ]
+      },
+      {
+        "role": "Business Owner",
+        "icon": "🏭",
+        "pains": [
+          "Competitors are breathing down your neck",
+          "Doing it the «old way»"
+        ],
+        "results": [
+          "Build a system with AI",
+          "Earn systematically"
+        ]
+      },
+      {
+        "role": "Expert / Sales",
+        "icon": "📱",
+        "pains": [
+          "You have followers",
+          "No stable sales?"
+        ],
+        "results": [
+          "AI as your marketing team",
+          "AI as your sales team"
+        ]
+      },
+      {
+        "role": "SMM Specialist",
+        "icon": "🚀",
+        "pains": [
+          "Want to charge more?",
+          "Spending too long on funnels?"
+        ],
+        "results": [
+          "Landing pages and bots in days",
+          "Rapid assembly"
+        ]
+      }
+    ]
+  },
+  "format": {
+    "title": "Transform your business into a revenue machine or fall behind those who already did!",
+    "features": [
+      "Button: Earn (active)",
+      "Button: Fall behind (grey)"
+    ],
+    "timeline": [
+      {
+        "day": "Choice",
+        "description": "Your choice determines your future in 2026."
+      }
+    ]
+  },
+  "program": {
+    "title": "What happens in 7 days?",
+    "days": [
+      {
+        "day": 1,
+        "title": "Niche Analysis",
+        "result": "Analyze your niche with GPT",
+        "tool": "ChatGPT",
+        "format": "Practice"
+      },
+      {
+        "day": 2,
+        "title": "Content Plan",
+        "result": "Create a monthly content plan",
+        "tool": "AI Writer",
+        "format": "Practice"
+      },
+      {
+        "day": 3,
+        "title": "Visuals",
+        "result": "Create visuals with neural networks",
+        "tool": "Midjourney/DALL-E",
+        "format": "Practice"
+      },
+      {
+        "day": 4,
+        "title": "AI Bot",
+        "result": "Set up a simple AI bot",
+        "tool": "Telegram Bot API",
+        "format": "Practice"
+      },
+      {
+        "day": 5,
+        "title": "Landing Page",
+        "result": "Build a landing page",
+        "tool": "AI Builders",
+        "format": "Practice"
+      },
+      {
+        "day": 6,
+        "title": "Analytics",
+        "result": "Build a hypothesis dashboard",
+        "tool": "Excel/Data Analysis",
+        "format": "Practice"
+      },
+      {
+        "day": 7,
+        "title": "Packaging",
+        "result": "Package your product with an AI presentation",
+        "tool": "Gamma/Tome",
+        "format": "Practice"
+      }
+    ],
+    "ctaText": "You won't just listen — you'll implement"
+  },
+  "benefits": {
+    "title": "Let's be honest: in 1 hour you can…",
+    "stats": [
+      {
+        "value": "1",
+        "label": "hour of mindless scrolling"
+      },
+      {
+        "value": "0",
+        "label": "results from wasted budget"
+      }
+    ],
+    "scenarios": [
+      "Mindlessly scroll Instagram and watch competitors grow",
+      "Waste money on another useless ad",
+      "Agonize over another promotion or discount",
+      "OR take a lesson and start building a system"
+    ]
+  },
+  "speaker": {
+    "name": "Evgenia Yakovenko",
+    "role": "International Leading Marketing & PR Specialist",
+    "photoUrl": "",
+    "facts": [
+      "Projects in 5 countries",
+      "7+ years in marketing",
+      "250+ clients",
+      "10,000+ students"
+    ],
+    "bio": "Started in SMM and content creation. Went from freelancer to head of an international marketing agency. Worked across various niches — from experts and online schools to brands and marketplaces. Today she successfully integrates AI systems into businesses."
+  },
+  "testimonials": {
+    "title": "After the mini-course you will have:",
+    "testimonials": [
+      {
+        "name": "Result",
+        "role": "System",
+        "text": "Understanding of the system and first automations, basic AI infrastructure."
+      },
+      {
+        "name": "Result",
+        "role": "Packaging",
+        "text": "Landing page draft, a month of content."
+      },
+      {
+        "name": "Result",
+        "role": "Tools",
+        "text": "Bot and analytics."
+      }
+    ],
+    "participantCount": "This is the foundation"
+  },
+  "pricing": {
+    "title": "Become a leader in your niche",
+    "price": "$15",
+    "oldPrice": "$49",
+    "countdownDate": "",
+    "features": [
+      "The most useful course you'll buy in 2026",
+      "AI implementation in 7 days"
+    ],
+    "bonuses": [],
+    "ctaText": "Proceed to payment"
+  },
+  "faq": {
+    "title": "Contacts",
+    "items": [
+      {
+        "question": "Company details",
+        "answer": "Sole Proprietor Kaminsky, BIN (IIN): 591130350037, Address: Kazakhstan, Astana"
+      },
+      {
+        "question": "Bank details",
+        "answer": "Bank: Kaspi Bank JSC, Account: KZ40722S000038051349"
+      },
+      {
+        "question": "Contact",
+        "answer": "Phone: 87013707474, Email: reflexcourseai@gmail.com"
+      },
+      {
+        "question": "Documents",
+        "answer": "Privacy Policy, Public Offer Agreement"
+      }
+    ]
+  },
+  "upsell": {
+    "title": "MENU",
+    "description": "Legal information",
+    "discount": "Privacy Policy | Public Offer Agreement"
+  },
+  "footer": {
+    "ctaText": "Proceed to payment",
+    "telegramUrl": "https://t.me/ai_marathon",
+    "youtubeUrl": "https://youtube.com/@ai_marathon",
+    "privacyUrl": "/privacy",
+    "termsUrl": "/terms",
+    "copyright": "© 2026 AI Reboot. SP Kaminsky."
+  },
+  "privacyPolicy": {
+    "title": "PRIVACY POLICY",
+    "backButton": "Back to home",
+    "lastUpdated": "Last updated",
+    "date": "February 11, 2026",
+    "intro": "of the website www.reflexcourse.com\nLast updated: __________ 2026\nThis Privacy Policy governs the collection, processing, storage, and protection of personal data of users of the website www.reflexcourse.com (hereinafter — the \"Site\").\nThe personal data operator is:\nSole Proprietor Kaminsky Konstantin Vladimirovich\nIIN: 591130350037\nRepublic of Kazakhstan\nEmail: reflexcourseai@gmail.com",
+    "sections": [
+      {
+        "title": "1. GENERAL PROVISIONS",
+        "content": "1.1. This Policy is developed in accordance with the Law of the Republic of Kazakhstan \"On Personal Data and Their Protection\".\n1.2. Using the Site, registering, filling out forms, placing an order, or making a payment constitutes the User's full and unconditional agreement with the terms of this Policy.\n1.3. If the User does not agree with the terms of the Policy, they must stop using the Site.\n1.4. The Operator does not verify the accuracy of the data provided and assumes the User provides up-to-date information."
+      },
+      {
+        "title": "2. WHAT DATA WE COLLECT",
+        "content": "The Operator may process the following data:\n2.1. Data provided by the User:\nFull name;\nEmail address;\nPhone number;\nCompany details (if provided);\nInformation provided in questionnaires, forms, and applications.\n2.2. Technical data:\nIP address;\nDevice type;\nBrowser;\nCookies;\nAnalytics data (Google Analytics, Meta Pixel, etc.).\n2.3. Payment data:\nThe Operator does not store or process bank card data. Payment is made through third-party payment systems (WayForPay, Kaspi, Halyk, etc.)."
+      },
+      {
+        "title": "3. PURPOSES OF PROCESSING",
+        "content": "Personal data is processed for:\nProviding access to video materials;\nFulfilling the public offer;\nProcessing payments;\nCommunicating with the User;\nSending informational and marketing materials (with consent);\nFraud protection;\nImproving the quality of the Site;\nComplying with legal requirements."
+      },
+      {
+        "title": "4. LEGAL BASIS",
+        "content": "Processing is carried out on the basis of:\nUser consent;\nConclusion and performance of a contract;\nLegal requirements;\nLegitimate interests of the Operator (business protection and fraud prevention)."
+      },
+      {
+        "title": "5. METHODS OF PROCESSING",
+        "content": "Processing may be carried out:\nAutomatically;\nWithout the use of automation tools.\nThe Operator has the right to:\nCollect;\nSystematize;\nStore;\nUse;\nClarify;\nBlock;\nDelete;\nTransfer within the framework of legislation."
+      },
+      {
+        "title": "6. STORAGE PERIODS",
+        "content": "6.1. Data is stored for the duration of contractual relations.\n6.2. Accounting and financial data is stored for periods established by the legislation of the Republic of Kazakhstan.\n6.3. After the expiration of storage periods, data is subject to deletion or anonymization."
+      },
+      {
+        "title": "7. TRANSFER TO THIRD PARTIES",
+        "content": "The Operator has the right to transfer data to:\nPayment services;\nHosting providers;\nEmail mailing services;\nCRM systems;\nGovernment authorities upon lawful request.\nTransfer is made in the volume necessary to perform the relevant functions.\nThe Operator does not sell personal data to third parties."
+      },
+      {
+        "title": "8. CROSS-BORDER TRANSFER",
+        "content": "Due to the use of international services and platforms, data may be transferred outside the Republic of Kazakhstan.\nThe User consents to such transfer if it is necessary for the functioning of the Site."
+      },
+      {
+        "title": "9. COOKIES AND ANALYTICS",
+        "content": "The Site uses cookies for:\nEnsuring proper operation;\nAnalytics;\nMarketing.\nThe User may disable cookies in their browser settings."
+      },
+      {
+        "title": "10. USER RIGHTS",
+        "content": "The User has the right to:\nReceive information about their data;\nRequest corrections;\nRequest deletion (if there are legal grounds);\nWithdraw consent to data processing.\nRequests should be sent to: reflexcourseai@gmail.com\nProcessing time — up to 15 business days."
+      },
+      {
+        "title": "11. SECURITY",
+        "content": "The Operator applies reasonable technical and organizational protection measures:\nSSL encryption;\nRestricted access to data;\nUse of secure servers;\nInternal access control.\nThe Operator is not responsible for the actions of third parties who gained access to data due to circumstances beyond the Operator's control."
+      },
+      {
+        "title": "12. CHANGES TO THE POLICY",
+        "content": "The Operator has the right to change the Policy without prior notice. The current version is always posted on www.reflexcourse.com.\nContinued use of the Site constitutes agreement with the updated version."
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "PUBLIC OFFER AGREEMENT",
+    "backButton": "Back to home",
+    "lastUpdated": "Last updated",
+    "date": "February 11, 2026",
+    "intro": "on providing access to video materials\nThis document is a public offer in accordance with Articles 387, 395, 396 of the Civil Code of the Republic of Kazakhstan.\nSole Proprietor Kaminsky Konstantin Vladimirovich, IIN 591130350037, registered in accordance with the legislation of the Republic of Kazakhstan (hereinafter — the \"Provider\"), offers any legally capable individual (hereinafter — the \"User\") to enter into an agreement under the conditions set forth below.\nAuthor and Lecturer of the Materials:\nDruzhinina Anna Konstantinovna, IIN 870406451296\nEmail: reflexcourseai@gmail.com\nProduct website: https://reflexcourse.com",
+    "sections": [
+      {
+        "title": "1. SUBJECT OF THE AGREEMENT",
+        "content": "1.1. The Provider grants the User a limited, personal, non-exclusive right (License) to view pre-recorded video materials (hereinafter — the \"Materials\") posted on the website https://reflexcourse.com.\n1.2. The Materials are an informational video product created based on the author's personal professional experience.\n1.3. The Provider does not check assignments, provide mentoring, support, knowledge assessment, or issue educational documents.\n1.4. The User independently decides on the application of the information received.\n1.5. The License term is 1 (one) calendar year from the moment access is provided.\n1.6. Access is provided exclusively to one User and is not transferable to third parties."
+      },
+      {
+        "title": "2. ACCEPTANCE PROCEDURE",
+        "content": "2.1. Payment for access is considered full and unconditional acceptance of this Offer.\n2.2. From the moment of payment, the agreement is considered concluded in electronic form and has legal force.\n2.3. By making payment, the User confirms that they have read the Offer and the Privacy Policy."
+      },
+      {
+        "title": "3. COST AND PAYMENT",
+        "content": "3.1. The current cost is indicated on the website https://reflexcourse.com.\n3.2. Payment is made through payment services posted on the Site.\n3.3. The Provider does not store or process bank card data.\n3.4. Access is provided within 24 hours after payment confirmation."
+      },
+      {
+        "title": "4. TERMS AND RESTRICTIONS",
+        "content": "4.1. The User is prohibited from copying, saving, distributing Materials, or transferring access to third parties.\n4.2. All exclusive rights to the Materials belong to the Provider and/or the Author.\n4.3. In case of violation, access will be blocked without refund."
+      },
+      {
+        "title": "5. REFUND POLICY",
+        "content": "5.1. Refund is possible only before access is provided.\n5.2. After access is provided, no refund is made.\n5.3. Refund requests should be sent to: reflexcourseai@gmail.com\n5.4. Processing time — up to 30 calendar days."
+      },
+      {
+        "title": "6. LIMITATION OF LIABILITY",
+        "content": "6.1. The Provider is not responsible for the results of using the Materials, the User's financial decisions, or technical failures caused by third parties.\n6.2. The Provider's maximum liability is limited to the amount actually paid by the User."
+      },
+      {
+        "title": "7. PERSONAL DATA",
+        "content": "7.1. Personal data processing is carried out in accordance with the Law of the Republic of Kazakhstan \"On Personal Data and Their Protection\".\n7.2. The purpose of processing is to fulfill the agreement and provide access."
+      },
+      {
+        "title": "8. FORCE MAJEURE",
+        "content": "8.1. The parties are released from liability in the event of force majeure circumstances."
+      },
+      {
+        "title": "9. FINAL PROVISIONS",
+        "content": "9.1. The Offer is valid indefinitely.\n9.2. The Provider has the right to make changes without prior notice.\n9.3. Disputes are subject to judicial consideration at the place of registration of the Provider in the Republic of Kazakhstan.\n9.4. Electronic correspondence via email is recognized as legally significant."
+      },
+      {
+        "title": "10. DETAILS",
+        "content": "Provider:\nSP Kaminsky Konstantin Vladimirovich\nIIN: 591130350037\nAddress: Republic of Kazakhstan, Astana\nEmail: reflexcourseai@gmail.com\nWebsite: https://reflexcourse.com\n\nAuthor and Lecturer:\nDruzhinina Anna Konstantinovna\nIIN: 870406451296\nEmail: reflexcourseai@gmail.com"
+      }
+    ]
+  },
+  "ui": {
+    "countdownLabel": "Time until start:",
+    "speakerTitle": "Your instructor",
+    "benefitsTitle1": "Let's be honest:",
+    "benefitsTitle2": "In 1 hour you can:",
+    "benefitsOr": "OR",
+    "benefitsPlus1": "+ system understanding",
+    "benefitsPlus2": "+ first implementations",
+    "formIntro": "Fill out the form to join the marathon. After payment, you will get access to all materials.",
+    "formName": "Your name",
+    "formEmail": "Email",
+    "formPhone": "Phone",
+    "formTelegram": "Telegram username",
+    "formSubmit": "Pay $15",
+    "formRedirecting": "Redirecting to payment...",
+    "formConsent": "By clicking the button, you agree to the",
+    "formConsentLink": "privacy policy",
+    "bonuses": "Bonuses:",
+    "safePayment": "Secure payment • 2-day refund guarantee",
+    "discountUntil": "Discounted price:",
+    "fullAccess": "for full 7-day access",
+    "floatingCta": "Join the marathon",
+    "navSignup": "Sign up",
+    "navProgram": "Program",
+    "navPricing": "Pricing",
+    "brand": "AI Reboot",
+    "themeLight": "Light theme",
+    "themeDark": "Dark theme",
+    "footerTagline": "Our goal is to create incredible programs that deliver knowledge and practical results.",
+    "formatTitle1": "Transform your business into a revenue machine",
+    "formatTitle2": "or fall behind those who already did!",
+    "formatEarn": "Earn",
+    "formatLose": "Fall behind",
+    "testimonialsSystem": "System",
+    "testimonialsSystemDesc": "Understanding the system and first automations",
+    "testimonialsInfra": "Infrastructure",
+    "testimonialsInfraDesc": "Basic AI infrastructure and landing page draft",
+    "testimonialsContent": "Content & Sales",
+    "testimonialsContentDesc": "A month of content, bot, and analytics",
+    "testimonialsQuote": "\"This is not theory.\nThis is the foundation.\"",
+    "audiencePains": "Pain points:",
+    "audienceResults": "Result:",
+    "programResult": "Result:",
+    "programTools": "Tools:",
+    "programFormat": "Format:",
+    "timerDays": "days",
+    "timerHours": "hours",
+    "timerMinutes": "minutes",
+    "timerSeconds": "seconds",
+    "validName": "Enter your name",
+    "validEmail": "Enter your email",
+    "validEmailBad": "Invalid email",
+    "validPhone": "Enter a valid phone number",
+    "errorPayment": "Payment creation error",
+    "errorGeneral": "An error occurred",
+    "placeholderName": "John",
+    "paymentTitle": "Payment successful!",
+    "paymentDesc": "Thank you for your purchase! To access the marathon, go to our Telegram bot and confirm your participation.",
+    "paymentTelegram": "Go to Telegram bot",
+    "paymentBotDesc": "The bot will automatically verify your payment and unlock access to the marathon materials.",
+    "paymentBack": "Back to home"
+  }
+}
