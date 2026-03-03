@@ -21,18 +21,6 @@ export function Hero() {
         <div className="absolute bottom-32 left-1/3 w-72 h-72 bg-primary/4 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
-      {/* Hands — full width at bottom */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        className="absolute bottom-0 left-0 right-0 z-[1] pointer-events-none"
-      >
-        <div className="relative w-full">
-          <img src="/hands.png" alt="" className="w-full h-auto relative z-10 drop-shadow-xl opacity-40" />
-        </div>
-      </motion.div>
-
       <div className="relative z-10 w-full max-w-3xl mx-auto px-2 sm:px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

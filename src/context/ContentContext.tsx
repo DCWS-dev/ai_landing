@@ -72,7 +72,7 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         i18n.addResourceBundle(lang, 'translation', { [section]: data }, true, true);
         
         // Синхронизация: сохраняем во все остальные языки тоже
-        const ALL_LANGS = ['ru', 'uk', 'kk', 'en'];
+        const ALL_LANGS = ['ru', 'uk', 'en'];
         for (const otherLang of ALL_LANGS) {
           if (otherLang === lang) continue;
           const otherStorageKey = `site_content_${otherLang}`;

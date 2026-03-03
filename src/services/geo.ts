@@ -1,5 +1,5 @@
-export type GeoLocale = 'ru' | 'uk' | 'kk' | 'en';
-export type GeoCurrency = 'RUB' | 'UAH' | 'KZT' | 'USD';
+export type GeoLocale = 'ru' | 'uk' | 'en';
+export type GeoCurrency = 'RUB' | 'UAH' | 'USD';
 
 export interface GeoInfo {
   country: string;
@@ -10,7 +10,7 @@ export interface GeoInfo {
 const COUNTRY_TO_CONFIG: Record<string, { locale: GeoLocale; currency: GeoCurrency }> = {
   RU: { locale: 'ru', currency: 'RUB' },
   UA: { locale: 'uk', currency: 'UAH' },
-  KZ: { locale: 'kk', currency: 'KZT' },
+  KZ: { locale: 'ru', currency: 'RUB' },
 };
 
 const DEFAULT_CONFIG: { locale: GeoLocale; currency: GeoCurrency } = {
@@ -24,7 +24,6 @@ export function getLocaleFromBrowserLang(): GeoLocale {
   const primary = lang.split('-')[0];
   if (primary === 'ru') return 'ru';
   if (primary === 'uk') return 'uk';
-  if (primary === 'kk') return 'kk';
   return 'en';
 }
 
@@ -32,7 +31,6 @@ export function getCurrencyForLocale(locale: GeoLocale): GeoCurrency {
   switch (locale) {
     case 'ru': return 'RUB';
     case 'uk': return 'UAH';
-    case 'kk': return 'KZT';
     default:   return 'USD';
   }
 }
