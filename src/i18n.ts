@@ -14,8 +14,8 @@ i18n
       uk: { translation: uk },
       en: { translation: en },
     },
-    lng: 'en',        // initial placeholder; GeoProvider overrides immediately
-    fallbackLng: 'en',
+    lng: 'uk',        // forced Ukrainian for local dev
+    fallbackLng: 'uk',
     debug: false,
     interpolation: {
       escapeValue: false,

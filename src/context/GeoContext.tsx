@@ -15,7 +15,7 @@ interface GeoContextValue {
   ready: boolean;
 }
 
-const browserLocale = getLocaleFromBrowserLang();
+const browserLocale: GeoLocale = 'uk'; // forced Ukrainian for local dev
 
 const GeoContext = createContext<GeoContextValue>({
   country: '',
@@ -37,13 +37,8 @@ export function GeoProvider({ children }: { children: ReactNode }) {
     // 1. Instant: set language from browser hint
     i18n.changeLanguage(browserLocale);
 
-    // 2. Async: refine with IP geolocation
-    detectGeo().then((info) => {
-      setGeo({ ...info, ready: true });
-      if (info.locale !== i18n.language) {
-        i18n.changeLanguage(info.locale);
-      }
-    });
+    // 2. Async: refine with IP geolocation (skipped for local Ukrainian dev)
+    setGeo({ country: 'UA', locale: 'uk', currency: 'UAH', ready: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
